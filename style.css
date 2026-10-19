@@ -1,0 +1,298 @@
+@font-face {
+  font-family: "Greek Freak";
+  src: url("fontes/Greek-Freak.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #072a47;
+  color: white;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  padding-top: 60px;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: #d9b86c;
+}
+
+h2, h3 {
+  color: #d9b86c;
+  font-family: "Cinzel", serif;
+  margin: 10px 0;
+}
+
+.pt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 18px;
+}
+
+.pt::before, .pt::after {
+  content: "";
+  width: 2em;
+  height: 1px;
+  background: #d9b86c;
+}
+
+.grego {
+  display: block;
+  font-family: "Greek Freak", serif;
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: normal;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #06142e;
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #d9b86c;
+}
+
+.secao {
+  position: relative;
+  padding: 80px 20px max(90px, 10vw);
+  text-align: center;
+  scroll-margin-top: 30px;
+}
+
+.sinopse {
+  background: linear-gradient(#1b6894, #17708a 40%, #0f5a64 80%, #0b4a4d);
+}
+
+#trailer {
+  background: linear-gradient(#0b4a4d, #1d4046 30%, #36303a 65%, #4a2631);
+}
+
+#elenco {
+  background: linear-gradient(#4a2631, #3f2433 50%, #2f1f33);
+}
+
+#curiosidades {
+  background: linear-gradient(#2f1f33, #1c1a30 55%, #0f1730);
+}
+
+#posteres {
+  background: linear-gradient(#0f1730, #0a1530 55%, #081228);
+}
+
+#contato {
+  background: linear-gradient(#081228, #060e20 55%, #050b1a);
+}
+
+.nuvem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: max(100px, 15vw);
+  object-fit: cover;
+  pointer-events: none;
+  transform: translateY(-60%);
+}
+
+.nuvem + h2 {
+  margin-top: 9vw;
+}
+
+.texto, .video, form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.texto {
+  max-width: 780px;
+  font-size: 26px;
+}
+
+.video {
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  border: 1px solid #d9b86c;
+}
+
+.video:hover {
+  box-shadow: 0 0 15px #d9b86c;
+}
+
+.video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tres {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 760px;
+}
+
+.card {
+  padding: 10px;
+  border: 1px solid #d9b86c;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+#curiosidades .grade {
+  max-width: 1200px;
+}
+
+#curiosidades .card {
+  padding: 24px;
+  min-height: 230px;
+}
+
+.foto {
+  height: 260px;
+  object-fit: cover;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, select, textarea, button {
+  padding: 12px;
+  border: 1px solid #d9b86c;
+  border-radius: 10px;
+  background: #0a2a4a;
+  color: white;
+  font: inherit;
+}
+
+button {
+  background: #d9b86c;
+  color: #06142e;
+}
+
+button:hover {
+  background: white;
+}
+
+form :focus {
+  outline: 2px solid #d9b86c;
+}
+
+footer {
+  padding: 50px 20px 20px;
+  font-size: 17px;
+  background: #050b1a;
+  border-top: 1px solid #d9b86c;
+}
+
+.rodape-grade {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.redes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.creditos {
+  max-width: 1000px;
+  margin: 35px auto 0;
+  padding-top: 15px;
+  border-top: 1px solid rgba(217, 184, 108, 0.4);
+  text-align: center;
+  font-size: 15px;
+}
+
+footer a:hover {
+  color: white;
+}
+
+@media (max-width: 900px) {
+  body {
+    padding-top: 100px;
+  }
+
+  .navbar {
+    height: 100px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px 15px;
+  }
+
+  .secao {
+    scroll-margin-top: 70px;
+  }
+
+  .texto {
+    font-size: 22px;
+  }
+
+  .grade {
+    grid-template-columns: 1fr;
+  }
+
+  .rodape-grade {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .redes {
+    justify-content: center;
+  }
+}
